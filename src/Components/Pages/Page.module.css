@@ -1,0 +1,98 @@
+.login {
+    width: 90%;
+    max-width: 40rem;
+    margin: 7rem auto;
+    padding: 2rem;
+  }
+  .box{
+    display: flex;
+  }
+.container {
+    width: 99%;
+    max-width: 40rem;
+    margin: 3rem auto;
+    padding: 1rem;
+    color: grey;
+    min-height: 20rem;
+  }
+  .container textarea{
+    width: 100%;
+    min-height: 20vh;
+    font-size: medium;
+    border: 1px solid black;
+  }
+  .navigationbutton{
+    width: 10%;
+    padding: 2rem;
+  }
+  .navigationbutton button{
+    margin: .7rem;
+    justify-content: space-around;
+    width: 11rem;
+  }
+  
+  
+.control {
+    margin: 1rem 0;
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .control input {
+    display: block;
+  }
+  
+  .control label {
+    font-weight: bold;
+    flex: 1;
+    color: #464646;
+    margin-bottom: 0.5rem;
+  }
+  
+  .control input {
+    flex: 3;
+    font: inherit;
+    padding: 0.35rem 0.35rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  .control input:focus {
+    outline: none;
+    border-color: #4f005f;
+    background: #f6dbfc;
+  }
+  
+  .control.invalid input {
+    border-color: red;
+    background: #fbdada;
+  }
+  
+  
+  .button{
+    text-align: center;
+    width: 100%;
+    border: 1px solid black;
+     height: 2rem;
+     color: beige;
+     background-color: #3a0544;
+     margin-top: 3px;
+  }
+  
+  @media (max-width: 768px) {
+    .control {
+      align-items: center;
+      flex-direction: row;
+    }
+  .box{
+    flex-direction: column;
+  }
+ .navigationbutton{
+  display: flex;
+ }
+ .navigationbutton button{
+  margin: .7rem;
+  justify-content: space-between;
+  width: 7rem;
+}
+  }

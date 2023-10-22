@@ -1,0 +1,19 @@
+.navbar{
+    height: 4rem;
+    background-color: rgb(181, 101, 181);
+    display: flex;
+    justify-content: space-around;
+    color: rgb(44, 44, 44);
+    font-size: medium;
+    align-items: center;
+}
+.navbardark{
+    height: 4rem;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: space-around;
+    color: aliceblue;
+    font-size: medium;
+    align-items: center;
+
+}
