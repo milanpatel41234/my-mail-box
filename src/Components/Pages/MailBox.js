@@ -11,8 +11,11 @@ const MailBox = () => {
   const Auth = useSelector((state) => state.Auth);
   const [SentboxMails, setSentboxMails] = useState([]);
   const [ItemToShow, setItemToShow] = useState('INBOX');
+  const [FetchingState , setFetchingState] = useState(<h3>No mails available</h3>)
+
 
   const FetchSentboxMails = async () => {
+    setFetchingState(<h3>Loading...</h3>)
     try {
       const res = await fetch(
         `https://mailbox-8e799-default-rtdb.firebaseio.com/${Auth.userName}/sentbox.json`
@@ -31,6 +34,7 @@ const MailBox = () => {
         }
         setSentboxMails([...Mails]);
       }
+      setFetchingState(<h3>No mails available</h3>)
     } catch (error) {
       alert(error.message);
     }
@@ -59,7 +63,7 @@ const HandleCompose =()=>{
       </div>
       <Card className={style.container}>
        {ItemToShow==='INBOX' && <Inbox />}
-        {ItemToShow==='SENTBOX' && <Sentbox items={SentboxMails} onFetch={FetchSentboxMails} />}
+        {ItemToShow==='SENTBOX' && <Sentbox items={SentboxMails} onFetch={FetchSentboxMails} State={FetchingState} />}
         {ItemToShow==='COMPOSE' && <ComposeMail onFetch={FetchSentboxMails} />}
       </Card>
     </div>

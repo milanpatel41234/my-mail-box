@@ -1,28 +1,29 @@
 .login {
-    width: 90%;
-    max-width: 40rem;
+    width: 60vw;
     margin: 7rem auto;
     padding: 2rem;
+    color: grey;
   }
   .box{
     display: flex;
   }
 .container {
-    width: 99%;
-    max-width: 40rem;
+    width: 60vw;
     margin: 3rem auto;
     padding: 1rem;
     color: grey;
     min-height: 20rem;
   }
   .container textarea{
-    width: 100%;
+    width: 95%;
     min-height: 20vh;
     font-size: medium;
     border: 1px solid black;
+    border-radius: .6rem;
+    padding: .6rem;
   }
   .navigationbutton{
-    width: 10%;
+    width: 10vw;
     padding: 2rem;
   }
   .navigationbutton button{
@@ -30,44 +31,6 @@
     justify-content: space-around;
     width: 11rem;
   }
-  
-  
-.control {
-    margin: 1rem 0;
-    display: flex;
-    align-items: stretch;
-    flex-direction: column;
-  }
-  .control input {
-    display: block;
-  }
-  
-  .control label {
-    font-weight: bold;
-    flex: 1;
-    color: #464646;
-    margin-bottom: 0.5rem;
-  }
-  
-  .control input {
-    flex: 3;
-    font: inherit;
-    padding: 0.35rem 0.35rem;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-  }
-  
-  .control input:focus {
-    outline: none;
-    border-color: #4f005f;
-    background: #f6dbfc;
-  }
-  
-  .control.invalid input {
-    border-color: red;
-    background: #fbdada;
-  }
-  
   
   .button{
     text-align: center;
@@ -78,8 +41,30 @@
      background-color: #3a0544;
      margin-top: 3px;
   }
-  
+  .actions{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .actions div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .actions div button{
+    border: none;
+  }
   @media (max-width: 768px) {
+    .login{
+      width: 95vw;
+      box-sizing: border-box;
+      margin:7rem auto;
+    }
+    .container{
+      width: 95vw;
+      box-sizing: border-box;
+      margin: auto;
+    }
     .control {
       align-items: center;
       flex-direction: row;
@@ -89,10 +74,11 @@
   }
  .navigationbutton{
   display: flex;
+  justify-content: space-between;
+  width: 95vw;
+  padding: .5rem;
  }
  .navigationbutton button{
-  margin: .7rem;
-  justify-content: space-between;
-  width: 7rem;
+  width: 6rem;
 }
   }

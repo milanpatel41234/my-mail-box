@@ -9,8 +9,10 @@ function Inbox() {
   const Auth = useSelector((state) => state.Auth);
   const [InboxMails, setInboxMails] = useState([]);
   const [ShowFullMail, setShowFullMail] = useState(false);
+  const [FetchinState , setFetchinState] = useState(<h3>No mails available</h3>)
 
   const FetchInboxMails = async () => {
+    setFetchinState(<h3>Loading...</h3>)
     try {
       const res = await fetch(
         `https://mailbox-8e799-default-rtdb.firebaseio.com/${Auth.userName}/inbox.json`
@@ -29,6 +31,7 @@ function Inbox() {
         }
         setInboxMails([...Mails]);
       }
+      setFetchinState(<h3>No mails available</h3>)
     } catch (error) {
       alert(error.message);
     }
@@ -53,7 +56,7 @@ function Inbox() {
           />
         ))
       )}
-      {InboxMails.length === 0 && <h3>No mails available</h3>}
+      {InboxMails.length === 0 && FetchinState}
     </>
   );
 }

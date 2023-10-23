@@ -91,12 +91,13 @@ function Login() {
       alert(error.message);
     }
   };
-  const HandleForgotPassword = ()=>{
-    setForgotPassword(true);
+  const TogleLogin = (e)=>{
+    e.preventDefault();
+    setForgotPassword(!ForgotPassword);
   }
   return (
     <Card className={style.login}>
-       <h1>Login</h1>
+       <h1>{!ForgotPassword ? 'Login' : 'Forgot Password'}</h1>
       <form onSubmit={HandleSubmit}>
         <Input
           id="Email"
@@ -114,12 +115,14 @@ function Login() {
         />}
         <div className={style.actions}>
           <Button type="Submit" disabled={!formIsValid}>
-          {ForgotPassword ? 'Reset Password' : 'Login'}
+          {ForgotPassword ? 'Send link' : 'Login'}
           </Button>
+          <div>
+          <button onClick={TogleLogin}>{ForgotPassword ? 'Login' : 'Forgot Password'}</button>
           <Link to='/createaccount'>Create New Account</Link>
           </div>
+          </div>
       </form>
-          <button onClick={HandleForgotPassword}>Forgot password</button>
     </Card>
   );
 }

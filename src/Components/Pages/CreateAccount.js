@@ -111,7 +111,7 @@ function Login() {
           Create Account
           </Button>
        
-        <Link to='/login' >Already have account? Try Login</Link>
+        <Link to='/login' >Login</Link>
           </div>
       </form>
     </Card>

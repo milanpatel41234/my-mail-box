@@ -5,11 +5,9 @@ import ShowCurrentMail from "./ShowCurrentMail";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 
-function Sentbox({ items, onFetch }) {
+function Sentbox({ items, onFetch , State}) {
   const [ShowFullMail, setShowFullMail] = useState(false);
-
   
-
   return (
     <>
       {ShowFullMail && <button onClick={()=>setShowFullMail(false)} className={style.button}><ArrowBackIcon/></button>}
@@ -26,7 +24,7 @@ function Sentbox({ items, onFetch }) {
           />
         ))
       )}
-      {items.length === 0 && <h3>No mails available</h3>}
+      {items.length === 0 && State}
     </>
   );
 }
