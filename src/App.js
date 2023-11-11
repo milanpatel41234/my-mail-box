@@ -17,8 +17,8 @@ function App() {
           <Route path="/mailbox" element={
             Auth.loginState ? <MailBox/> : <Navigate to="/login" />
           } />
-          <Route path="/login" element={<Login/>} />
-          <Route path="/createaccount" element={<CreateAccount/>} />
+          <Route path="/login" element={ Auth.loginState ? <Navigate to="/mailbox" /> : <Login/>} />
+          <Route path="/createaccount" element={ Auth.loginState ? <Navigate to="/mailbox" /> : <CreateAccount/>} />
       </Routes>
     </div>
   );

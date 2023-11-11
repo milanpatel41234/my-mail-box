@@ -77,7 +77,7 @@ function ComposeMail(props) {
   }, [EmailValue, SubjectValue, EmailContent]);
   return (
     <form onSubmit={HandleSubmit}>
-      <h1>Sand Emails</h1>
+      <h1>Send Emails</h1>
       <Input
         id="Reciever's Email"
         type="text"
@@ -98,7 +98,7 @@ function ComposeMail(props) {
       />
       <div >
         <Button type="Submit" disabled={!FormIsValid || EmailSanding}>
-         {EmailSanding ? 'Sanding...' : 'Sand'} 
+         {EmailSanding ? 'Sending...' : 'Send'} 
         </Button>
       </div>
     </form>
